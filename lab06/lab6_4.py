@@ -1,0 +1,20 @@
+import matplotlib.pyplot as plt
+
+# กำหนดค่าพิกัด x และ y
+xs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ys = [4, 8, 5, 6, 8, 2, 1, 4, 3, 1]
+
+# สร้างกราฟ
+plt.scatter(xs, ys, color='red')  # ใช้ scatter plot และกำหนดให้จุดมีสีแดง
+plt.plot(xs, ys, color='blue')    # วาดเส้นเชื่อมระหว่างจุดด้วยสีน้ำเงิน
+
+# แสดงชื่อจุด
+for i, (x, y) in enumerate(zip(xs, ys), start=1):
+    plt.text(x, y, f'C{i}', fontsize=9, ha='right')
+
+plt.xlabel('X')  # กำหนด label แกน X
+plt.ylabel('Y')  # กำหนด label แกน Y
+plt.title('Scatter Plot with Labels and Connecting Line')  # กำหนดหัวข้อกราฟ
+
+# แสดงกราฟ
+plt.show()
